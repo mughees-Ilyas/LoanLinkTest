@@ -27,7 +27,7 @@ password: admin
 only admin account have access to add functionality for thermostat.
 
 
-as backend is a mocked one, if you refresh the page all new users will be deleted.
+as backend is a mocked one, if you refresh the page all new thermostats will be deleted.
 
 ## routes
 we have   
