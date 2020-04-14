@@ -31,10 +31,4 @@ export class NavbarComponent {
   usersPage() {
     this.router.navigate(['/thermostats']);
   }
-  /*
-   * navigate to user adding page to add new user
-   */
-  addUserPage() {
-    this.router.navigate(['/thermostats/thermostat/new']);
-  }
 }

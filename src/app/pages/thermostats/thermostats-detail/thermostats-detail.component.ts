@@ -21,10 +21,13 @@ export class ThermostatsDetailComponent {
     ) { }
 
     ngOnInit() {
-        this.loading = true;
+        // set loading true to show spinner
+      this.loading = true;
       this.route.paramMap.subscribe(params => {
+          //get thermostat id from url route
         this.id = +params.get("id")
       });
+      // load all readings for given thermostat
         this.thermostatsService.getReadings(this.id).pipe(first()).subscribe(readings => {
             this.loading = false;
           this.readings = readings;

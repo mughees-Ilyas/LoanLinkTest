@@ -12,12 +12,12 @@ export class AdminAuthGuard implements CanActivate {
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
         const currentUser = this.authenticationService.currentUserValue;
-        if (currentUser.role=== 'admin') {
-            // logged in so return true
+        if (currentUser && currentUser.role=== 'admin') {
+            // logged in as admin so return true
             return true;
         }
 
-        // not logged in so redirect to login page with the return url
+        // not logged or not logged in as admin so redirect to /
         this.router.navigate(['/']);
         return false;
     }

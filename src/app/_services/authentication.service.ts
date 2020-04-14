@@ -10,7 +10,7 @@ import { User } from '@app/_models';
 export class AuthenticationService {
     private currentUserSubject: BehaviorSubject<User>;
     public currentUser: Observable<User>;
-    //if a user exist in local storage ue it as current user and dont ask for login
+    //if a user exist in local storage use it as current user and dont ask for login
     constructor(private http: HttpClient) {
         this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
         this.currentUser = this.currentUserSubject.asObservable();
