@@ -53,6 +53,8 @@ _helper folder have auth guard to specifiy which routes are protected and some H
 
 _Service folder have project services (authentication and thermostat service) 
 
+## Docker 
+project is docker ready and can be executed in docker container using docker file in project
 
 ## project explanation.
 
