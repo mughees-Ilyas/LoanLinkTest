@@ -1,0 +1,58 @@
+.thermostat {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+}
+.itemBox {
+  position: relative;
+  cursor: pointer;
+  background-color: #EEE;
+  margin: .5em;
+  padding-top: .3em;
+  border-radius: 4px;
+}
+
+.itemBox:hover {
+  color: #607D8B;
+  background-color: #DDD;
+  left: .1em;
+}
+
+.thermostat a {
+  color: #888;
+  text-decoration: none;
+  position: relative;
+  display: block;
+}
+
+.thermostat a:hover {
+  color:#607D8B;
+}
+
+.thermostat .badge {
+  display: inline-block;
+  font-size: small;
+  color: white;
+  padding: 0.8em 0.7em 1.8em 0.7em;
+  background-color: #607D8B;
+  line-height: 1em;
+  position: relative;
+  left: -1px;
+  top: -4px;
+  height: 1.8em;
+  min-width: 16px;
+  text-align: right;
+  margin-right: .8em;
+  border-radius: 4px 0 0 4px;
+}
+
+.itemBox.selected {
+  background-color: #CFD8DC;
+  color: white;
+}
+.itemBox.selected:hover {
+  background-color: #BBD8DC;
+}
+.headingLatest {
+  color: black;
+}

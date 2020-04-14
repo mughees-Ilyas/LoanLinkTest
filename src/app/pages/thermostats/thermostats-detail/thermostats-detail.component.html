@@ -1,0 +1,39 @@
+﻿<div class="card mt-4">
+    <h4 class="card-header">ThermoStat {{id}} Detail Page</h4>
+    <div class="card-body">
+        <div *ngIf="loading" class="spinner-border spinner-border-sm"></div>
+        <div *ngIf="readings">
+            <div class="flex">
+                <div class="flexBox">
+                    Temperature
+                </div>
+                <div class="flexBox">
+                    Humidity
+                </div>
+                <div class="flexBox">
+                    battery_charge
+                </div>
+                <div class="flexBox">
+                    location
+                </div>
+            </div>
+            <div class="pt-2 pb-2" *ngFor="let reading of readings">
+                <div class="flex">
+                    <div class="flexBox">
+                         {{reading.temperature}}
+                    </div>
+                    <div class="flexBox">
+                         {{reading.humidity}}
+                    </div>
+                    <div class="flexBox" [ngClass]="{'alert-danger': reading.battery_charge < 21 }">
+                        {{reading.battery_charge}}
+                    </div>
+                    <div class="flexBox">
+                         {{reading.location}}
+                    </div>
+                </div>
+            </div>
+        </div>
+      <button class="btn btn-primary" (click)="getBack()">Back</button>
+    </div>
+</div>

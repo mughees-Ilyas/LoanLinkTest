@@ -1,0 +1,23 @@
+﻿<div class="card mt-4">
+    <h4 class="card-header">Thermostat List Page</h4>
+    <div class="card-body">
+        <div *ngIf="loading" class="spinner-border spinner-border-sm"></div>
+      <div class="thermostat flex flexWrap">
+        <div class="flexBox pb-3 itemBox" *ngFor="let thermostat of thermostats let i = index "
+            [class.selected]="thermostat.id === selectedId">
+          <a [routerLink]="['/thermostats', thermostat.id]">
+            <span class="badge">{{ thermostat.id }}</span>{{ thermostat.location }}
+            <div class=" ml-5 pb-2">
+                <div class="headingLatest">Latest reading</div>
+                <div [ngClass]="{'alert-danger': thermostat.latestReading.battery_charge < 21 }">Remaining Battery: {{thermostat.latestReading.battery_charge}}</div>
+                <div>humidity: {{thermostat.latestReading.humidity}}</div>
+                <div>temperature: {{thermostat.latestReading.temperature}}</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <button *ngIf="isAdmin" class="btn btn-primary" (click)="newThermostat()">Add Thermostat</button>
+    </div>
+
+</div>

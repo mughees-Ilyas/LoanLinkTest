@@ -1,0 +1,13 @@
+﻿<div class="pos-f-t">
+  <nav class="navbar navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" (click)="onClick()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+</div>
+<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="toggle">
+  <div class="navbar-nav navigation">
+    <a class="nav-item nav-link"(click)="usersPage()">View Thermostats</a>
+    <a class="nav-item nav-link" (click)="logout()">Logout</a>
+  </div>
+</nav>
