@@ -16,6 +16,7 @@ export class ThermostatsListComponent {
     loading = false;
     thermostats: Thermostats[];
     isAdmin = false;
+    intervalId;
 
     constructor(private authenticationService:AuthenticationService,
                 private thermostatsService: ThermostatsService,
@@ -29,6 +30,14 @@ export class ThermostatsListComponent {
         if (currentUser.role==='admin') {
             this.isAdmin = true;
         }
+        this.loadData();
+        //load data every 1 minutes
+        this.intervalId = setInterval(() => {
+            this.loadData();
+        }, 60000);
+
+    }
+    loadData() {
         this.thermostatsService.getAll().pipe(first()).subscribe(thermostats => {
             this.loading = false;
             this.thermostats = thermostats;
@@ -40,5 +49,10 @@ export class ThermostatsListComponent {
   newThermostat() {
     this.router.navigate(['thermostats/thermostat/new']);
   }
+    ngOnDestroy() {
+        if (this.intervalId) {
+            clearInterval(this.intervalId);
+        }
+    }
 
 }
