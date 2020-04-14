@@ -1,12 +1,8 @@
 ﻿import { Component } from '@angular/core';
 import { first } from 'rxjs/operators';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { ThermostatReading } from '@app/_models';
-import { ThermostatsService, AuthenticationService } from '@app/_services';
-import { switchMap } from 'rxjs/operators';
-import { Observable } from 'rxjs';
-
-
+import { ThermostatsService } from '@app/_services';
 
 @Component({ templateUrl: 'thermostats-detail.component.html' })
 export class ThermostatsDetailComponent {

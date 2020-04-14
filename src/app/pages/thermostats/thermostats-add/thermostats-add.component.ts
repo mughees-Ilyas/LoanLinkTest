@@ -2,7 +2,7 @@
 import { first } from 'rxjs/operators';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
-import { ThermostatsService, AuthenticationService } from '@app/_services';
+import { ThermostatsService } from '@app/_services';
 
 
 @Component(
